@@ -13,6 +13,7 @@
 		<!-- Theme used for syntax highlighted code -->
 		<link rel="stylesheet" href="plugin/highlight/monokai.css">
 
+<<<<<<< HEAD
 		<style>
 			.reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5 {
 						  text-transform: none;
@@ -32,6 +33,31 @@
 				width: 100% !important;
 			}
 		</style>
+=======
+		<!-- Font awesome is required for the chalkboard plugin -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+		<!-- Custom controls plugin is used to for opening and closing annotation modes. -->
+		<script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/customcontrols/plugin.js"></script>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/customcontrols/style.css">
+		<!-- Chalkboard plugin -->
+		<script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/chalkboard/plugin.js"></script>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/chalkboard/style.css">
+
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js-plugins/menu/font-awesome/css/fontawesome.css">
+
+
+		<style>
+			.fragment.blur {
+			  filter: blur(5px);
+			  opacity: 0.7;
+			}
+			.fragment.blur.visible {
+			  filter: none;
+			  opacity: 1;
+			}
+		  </style>
+>>>>>>> 711e88604f364dd083fc1bfd92b0fd3d68a822f2
 	</head>
 	<body>
 		<div class="reveal">
@@ -40,6 +66,7 @@
 
 				<!-- 	height: 73vh;
 					width: 67vw; -->
+<<<<<<< HEAD
 					<!-- style="text-align: left; height: 90vh; width: 100vw;" -->
 
 
@@ -211,6 +238,22 @@
 					<h3><a href="Codecademy.com">Codecademy.com</a></h3>
 
 				</section>
+=======
+					
+					<div style="text-align: left; height: 73vh; width: 67vw;">
+						<h1>test</h1>
+					</div>
+
+				</section>
+				<section>Slide 2</section>
+				<section>Slide 3</section>
+				<section>
+					custom blur test
+					<p class="fragment custom blur">One</p>
+					<p class="fragment custom blur">Two</p>
+					<p class="fragment custom blur">Three</p>
+				  </section>
+>>>>>>> 711e88604f364dd083fc1bfd92b0fd3d68a822f2
 			</div>
 		</div>
 
@@ -226,8 +269,28 @@
 				hash: true,
 				center: true,
 				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
-			});
+				customcontrols: {
+					controls: [
+					{ icon: '<i class="fa fa-pen-square"></i>',
+						title: 'Toggle chalkboard (B)',
+						action: 'RevealChalkboard.toggleChalkboard();'
+					},
+					{ icon: '<i class="fa fa-pen"></i>',
+						title: 'Toggle notes canvas (C)',
+						action: 'RevealChalkboard.toggleNotesCanvas();'
+					}
+					]
+				},
+				chalkboard: {
+
+				},
+				plugins: [ 
+					RevealMarkdown, 
+					RevealHighlight, 
+					RevealNotes, 
+					RevealChalkboard,
+					RevealCustomControls 
+				]});
 		</script>
 	</body>
 </html>
